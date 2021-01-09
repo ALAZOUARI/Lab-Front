@@ -1,0 +1,22 @@
+{
+  "members":[
+  {
+    "id" : "123456",
+    "cin" : "2444",
+    "name" : "ALA ZOUARI",
+    "createdDate": "2020-04-22T01:00:00-05:00",
+    "cv" : "cv.pdf",
+    "type": "Engineer"
+
+  },
+  {
+    "id" : "3456",
+    "cin" : "244",
+    "name" : "SSSSSI",
+    "createdDate": "2020-04-22T01:00:00-05:00",
+    "cv" : "cv.pdf",
+    "type": "Engineer"
+
+  }
+]
+}
