@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from '../../@root/confirm-dialog/confirm-dialog.component';
 import {takeUntil} from 'rxjs/operators';
 import {TeacherService} from '../../services/teacher.service';
+import {Teacher} from '../../models/teacher.module';
 
 @Component({
   selector: 'app-teacher-list',
@@ -17,7 +18,7 @@ export class TeacherListComponent implements OnInit , OnDestroy{
   // tslint:disable-next-line:variable-name
   protected _onDestroy = new Subject<void>();
   displayedColumns: string[] = ['cin', 'name', 'cv', 'type', 'email', 'grade' , 'etablissement', 'actions'];
-  dataSource: Member[] = [] ;
+  dataSource: Teacher[] = [] ;
 
   constructor(private memberservice: TeacherService,
               private dialog: MatDialog) { }

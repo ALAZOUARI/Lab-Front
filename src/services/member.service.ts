@@ -48,6 +48,6 @@ export class MemberService {
       .set('idetd', idetd);
     const params2 = new HttpParams()
       .set('idens', idens);
-    return this.httpClient.put<Member>(`${this.path}/membres/etudiant`, {}, { params: {idetd: idetd, idens : idens }}).toPromise();
+    return this.httpClient.put<Member>(`${this.path}/membres/etudiant`, {}, { params: {idetd, idens }}).toPromise();
   }
 }

@@ -21,8 +21,8 @@ export class TeacherService {
   ) { }
 
 
-  getAllmembers(): Promise<Member[]>{
-    return this.httpClient.get<Member[]>(`${this.path}/membres/enseignants`).toPromise();
+  getAllmembers(): Promise<Teacher[]>{
+    return this.httpClient.get<Teacher[]>(`${this.path}/membres/enseignants`).toPromise();
   }
   getMemberByById(id: string): Promise<Teacher>{
     return this.httpClient.get<Teacher>(`${this.path}/membres/${id}`).toPromise();

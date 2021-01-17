@@ -26,7 +26,6 @@ export class MemberListComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.fetchDataSource();
-    this.memberservice.affectencadranttoetd('4', '2');
   }
 
   // tslint:disable-next-line:typedef
