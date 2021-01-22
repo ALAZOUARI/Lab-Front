@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {GLOBAL} from '../app/app-config';
 import {Member} from '../models/member.mudule';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {Event} from '../models/event.module';
 
@@ -43,5 +43,13 @@ export class EventService {
   }
   removeEventById(id: string): Promise<void>{
     return this.httpClient.delete<void>(`${this.path}/evenements/${id}`).toPromise();
+  }
+  affecteevttoorg(idorg: string, idevt: string): Promise<any>{
+    const params1 = new HttpParams()
+      .set('idorg', idorg);
+    const params2 = new HttpParams()
+      .set('idevt', idevt);
+    return this.httpClient.put<Member>('http://localhost:9999/membreservice/membres/organisateur', {}, { params: {idorg, idevt }})
+      .toPromise();
   }
 }

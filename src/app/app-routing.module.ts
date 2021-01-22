@@ -12,6 +12,9 @@ import {ToolListComponent} from './tool-list/tool-list.component';
 import {EventListComponent} from './event-list/event-list.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AttachsuptostuComponent} from './attachsuptostu/attachsuptostu.component';
+import {AttachpubtoautComponent} from './attachpubtoaut/attachpubtoaut.component';
+import {AttacheventtoorgComponent} from './attacheventtoorg/attacheventtoorg.component';
+import {FullmemberComponent} from './fullmember/fullmember.component';
 
 const routes: Routes = [{
   path: '',
@@ -44,6 +47,11 @@ const routes: Routes = [{
         path: 'create',
         pathMatch: 'full',
         component: MemberFormComponent
+      },
+      {
+        path: 'memberprofile/:id',
+        pathMatch: 'full',
+        component: FullmemberComponent
       },
       {
         path: ':id/edit',
@@ -176,6 +184,16 @@ const routes: Routes = [{
     path: 'attachsuptostu',
     pathMatch: 'full',
     component: AttachsuptostuComponent
+  },
+  {
+    path: 'attachauthtopub',
+    pathMatch: 'full',
+    component: AttachpubtoautComponent
+  },
+  {
+    path: 'attachevttoorg',
+    pathMatch: 'full',
+    component: AttacheventtoorgComponent
   },
   {
     path: 'teacher-form',

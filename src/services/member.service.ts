@@ -3,6 +3,7 @@ import {GLOBAL} from '../app/app-config';
 import {Member} from '../models/member.mudule';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../environments/environment';
+import {FullMember} from '../models/full-member';
 
 
 
@@ -22,6 +23,9 @@ export class MemberService {
 
   getAllmembers(): Promise<Member[]>{
     return this.httpClient.get<Member[]>(`${this.path}/membres/etudiants`).toPromise();
+  }
+  getFullmembers(id: string): Promise<FullMember>{
+    return this.httpClient.get<FullMember>(`${this.path}/fullmember/${id}`).toPromise();
   }
   getMemberByById(id: string): Promise<Member>{
     return this.httpClient.get<Member>(`${this.path}/membres/${id}`).toPromise();
@@ -49,5 +53,8 @@ export class MemberService {
     const params2 = new HttpParams()
       .set('idens', idens);
     return this.httpClient.put<Member>(`${this.path}/membres/etudiant`, {}, { params: {idetd, idens }}).toPromise();
+  }
+  getAllmembersType(): Promise<Member[]>{
+    return this.httpClient.get<Member[]>(`${this.path}/membres`).toPromise();
   }
 }

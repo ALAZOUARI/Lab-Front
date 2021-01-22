@@ -6,6 +6,7 @@ import {takeUntil} from 'rxjs/operators';
 import {MatDialog} from '@angular/material/dialog';
 import {Subject} from 'rxjs';
 import {ConfirmDialogComponent} from '../../@root/confirm-dialog/confirm-dialog.component';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-member-list',
@@ -18,7 +19,7 @@ export class MemberListComponent implements OnInit, OnDestroy {
   displayedColumns: string[] = ['cin', 'name', 'cv', 'type', 'email', 'dateInscription', 'diplome' , 'encadrant', 'actions'];
   dataSource: Member[] = [] ;
 
-  constructor(private memberservice: MemberService,
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private memberservice: MemberService,
               private dialog: MatDialog) { }
   ngOnDestroy(): void {
     this._onDestroy.next();
@@ -67,5 +68,9 @@ export class MemberListComponent implements OnInit, OnDestroy {
     else{
       return ' ';
     }
+  }
+
+  navigateToProfile(id):void {
+    this.router.navigate(['./memberprofile/' + id], {relativeTo: this.activatedRoute});
   }
 }

@@ -20,6 +20,9 @@ import { PublicationListComponent } from './publication-list/publication-list.co
 import { PublicationFormComponent } from './publication-form/publication-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AttachsuptostuComponent } from './attachsuptostu/attachsuptostu.component';
+import { AttachpubtoautComponent } from './attachpubtoaut/attachpubtoaut.component';
+import { AttacheventtoorgComponent } from './attacheventtoorg/attacheventtoorg.component';
+import { FullmemberComponent } from './fullmember/fullmember.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { AttachsuptostuComponent } from './attachsuptostu/attachsuptostu.compone
     PublicationListComponent,
     PublicationFormComponent,
     DashboardComponent,
-    AttachsuptostuComponent
+    AttachsuptostuComponent,
+    AttachpubtoautComponent,
+    AttacheventtoorgComponent,
+    FullmemberComponent
   ],
   imports: [
     BrowserModule,

@@ -55,9 +55,9 @@ export class TeacherListComponent implements OnInit , OnDestroy{
 
   getType(discriminatorValue: any): string {
     if (discriminatorValue === 'ens'){
-      return 'Enseignant';
+      return 'Teacher';
     }else{
-      return 'Etudiant';
+      return 'Student';
     }
   }
 

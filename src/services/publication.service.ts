@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import {GLOBAL} from '../app/app-config';
 import {Publication} from '../models/publication.module';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {Event} from '../models/event.module';
+import {Member} from '../models/member.mudule';
 
 
 
@@ -44,4 +45,12 @@ export class PublicationService {
   removePubById(id: string): Promise<void>{
     return this.httpClient.delete<void>(`${this.path}/publications/${id}`).toPromise();
   }
+  affectepubtoaut(idauteur: string, idpub: string): Promise<any>{
+    const params1 = new HttpParams()
+      .set('idauteur', idauteur);
+    const params2 = new HttpParams()
+      .set('idpub', idpub);
+    return this.httpClient.put<Member>('http://localhost:9999/membreservice/membres/auteur', {}, { params: {idauteur, idpub }}).toPromise();
+  }
+
 }

@@ -1,0 +1,26 @@
+<mat-card>
+
+  <form [formGroup]="form" *ngIf="!!form" (ngSubmit)="onSubmit()" class="form" fxLayout="column">
+    <mat-form-field>
+      <mat-label>Member</mat-label>
+      <mat-select formControlName="member" [(ngModel)]="selectedItem">
+
+        <mat-option *ngFor="let element of dataSource" [value]="element.id">
+          {{element.prenom +' ' +element.nom}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Publication</mat-label>
+      <mat-select formControlName="evenement" [(ngModel)]="selectedItem2">
+
+        <mat-option *ngFor="let element of evenements" [value]="element.id">
+          {{element.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="form.invalid">Submit</button>
+    </div>
+  </form>
+</mat-card>

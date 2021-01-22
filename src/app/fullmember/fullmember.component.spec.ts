@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AttachsuptostuComponent } from './attachsuptostu.component';
+import { FullmemberComponent } from './fullmember.component';
 
-describe('AttachsuptostuComponent', () => {
-  let component: AttachsuptostuComponent;
-  let fixture: ComponentFixture<AttachsuptostuComponent>;
+describe('FullmemberComponent', () => {
+  let component: FullmemberComponent;
+  let fixture: ComponentFixture<FullmemberComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AttachsuptostuComponent ]
+      declarations: [ FullmemberComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AttachsuptostuComponent);
+    fixture = TestBed.createComponent(FullmemberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
